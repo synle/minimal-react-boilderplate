@@ -1,0 +1,33 @@
+ <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Static Template</title>
+    </head>
+    <body>
+      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      <script type="text/babel" data-presets="react" data-type="module">
+        import React from "https://cdn.skypack.dev/react";
+        import ReactDOM from "https://cdn.skypack.dev/react-dom";
+  
+        const MyText = ({ color, ...props }) => {
+          return <span style={{color: color}}>{props.children}</span>
+        };
+  
+        function App() {
+          return (
+            <div>
+              Hello <MyText color='red'>World</MyText>
+            </div>
+          );
+        }
+  
+        ReactDOM.render(
+          <App />,
+          document.body
+        );
+      </script>
+    </body>
+  </html>
